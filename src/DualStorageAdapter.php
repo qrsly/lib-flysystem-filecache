@@ -138,7 +138,7 @@ class DualStorageAdapter extends AbstractAdapter
      */
     public function read($path)
     {
-        if(($result = $this->localStorage->read($path)) !== false) {
+        if($this->localStorage->has($path) && ($result = $this->localStorage->read($path)) !== false) {
             return $result;
         }
         $result = $this->remoteStorage->read($path);
@@ -162,7 +162,7 @@ class DualStorageAdapter extends AbstractAdapter
      */
     public function readStream($path)
     {
-        if(($result = $this->localStorage->readStream($path)) !== false) {
+        if($this->localStorage->has($path) && ($result = $this->localStorage->readStream($path)) !== false) {
             if(is_resource($result['stream'])) {
                 return $result;
             }
