@@ -10,12 +10,13 @@ All write operation are made on both.
 
 usage : 
 
+```php
 $remote = new League\Flysystem\AwsS3V3\AwsS3Adapter(...);
 $local = new League\Flysystem\Adapter\Local(...);
 
 $autosave = true;
 
-$adapter = new oat\LibFlysystemFilecache\model\flysystem\DualStorageAdapter($remote, $local ,autosave);
-
+$adapter = new oat\flysystem\Adapter\DualStorageAdapter($remote, $local ,$autosave);
+```
 
 see http://flysystem.thephpleague.com/ to configure your adapters
