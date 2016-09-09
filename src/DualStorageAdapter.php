@@ -335,7 +335,7 @@ class DualStorageAdapter extends AbstractAdapter
      */
     public function copy($path, $newpath)
     {
-        return $this->callOnBoth('rename' , [$path, $newpath]);
+        return $this->callOnBoth('copy' , [$path, $newpath]);
     }
 
     /**
